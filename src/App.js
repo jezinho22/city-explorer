@@ -22,7 +22,7 @@ function App() {
 			);
 		} catch (error) {
 			// error message
-			alert("It looks like what you entered is not a placename");
+			alert(error + ": It looks like what you entered is not a placename");
 		}
 	}
 	// get the string from input
