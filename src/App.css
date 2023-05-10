@@ -2,7 +2,7 @@
 	width: 100vw;
 	height: 100vh;
 	display: flex;
-	flex-direction: column;
+	flex-direction: row;
 	justify-content: center;
 	align-items: center;
 }
@@ -11,10 +11,22 @@ body {
 	color: yellowgreen;
 	font-family: Verdana, Geneva, Tahoma, sans-serif;
 }
+.mainContainer {
+	display: inline-block;
+}
 h1 {
 	font-weight: 200;
 	font-size: 3rem;
 	margin: 1.5rem;
+	text-align: center;
+}
+h3 {
+	color: white;
+	text-align: center;
+}
+form {
+	display: flex;
+	justify-content: center;
 }
 fieldset {
 	margin-bottom: 1rem;
@@ -31,4 +43,5 @@ fieldset button {
 img {
 	max-width: 400px;
 	margin: 1rem;
+	border-radius: 4px;
 }
