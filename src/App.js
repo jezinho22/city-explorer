@@ -18,21 +18,26 @@ function App() {
 			// get location data
 			const result = await axios.get(API);
 			setLocation(result.data[0]);
+			// stuck here
+			console.log(getWeather(location));
 
 			// create location map url
 			setmapImg(
 				`https://maps.locationiq.com/v3/staticmap?key=${process.env.REACT_APP_API_KEY}&center=${location.lat},${location.lon}&zoom=15`
 			);
-			// get weather
-			const weatherAPI = `http://localhost:8080/weather?lat=${location.lat}&lon=${location.lon}&searchQuery=${searchQuery}`;
-			const weatherResults = await axios.get(weatherAPI);
-			setWeather(weatherResults.data);
-			console.table(weather);
 		} catch (error) {
 			// error message
 			alert(error + ": It looks like what you entered is not a placename");
 		}
 	}
+	async function getWeather(location) {
+		// get weather
+		const weatherAPI = `http://localhost:8080/weather?lat=${location.lat}&lon=${location.lon}&searchQuery=${searchQuery}`;
+		const weatherResults = await axios.get(weatherAPI);
+		return weatherResults;
+		// setWeather(weatherResults.data);
+	}
+
 	// get the string from input
 	function handleChange(event) {
 		setsearchQuery(event.target.value);
