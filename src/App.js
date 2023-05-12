@@ -16,7 +16,7 @@ function App() {
 	async function getLocation() {
 		try {
 			// https://eu1.locationiq.com/v1/search?key=YOUR_ACCESS_TOKEN&q=SEARCH_STRING&format=json
-			const API = `https://eu1.locationiq.com/v1/search?key=${process.env.REACT_APP_API_KEY}&q=${searchQuery}&format=json`;
+			const API = `https://eu1.locationiq.com/v1/search?key=4106571abc974655803abe8082a05186&q=${searchQuery}&format=json`;
 			const res = await axios.get(API);
 			const newLocation = res.data[0];
 			setLocation(newLocation);
