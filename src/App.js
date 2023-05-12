@@ -39,7 +39,7 @@ function App() {
 
 	async function getWeather(newLocation) {
 		try {
-			const API = `http://localhost:8080/weather?searchQuery=${searchQuery}&lat=${newLocation.lat}&lon=${newLocation.lon}`;
+			const API = `https://jezinho-city-explore.onrender.com/weather?searchQuery=${searchQuery}&lat=${newLocation.lat}&lon=${newLocation.lon}`;
 			const res = await axios.get(API);
 			console.log(res.data);
 			setWeather(res.data);
